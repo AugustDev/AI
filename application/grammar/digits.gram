@@ -1,0 +1,48 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Digits Grammar file
+ */
+
+grammar digits;
+
+
+public <miscellaneous> = (quit);
+
+/*
+public <numbers> = (oh | zero | one | two | three | four | five | six | seven | eight | nine) * ;
+public <stuff> = (car | dog) * ;
+*/
+
+<contacts> = (matas | mom | martin);
+<songs> = ( something romantic | wildest dreams | gyro | gyroscope | young blood | sun | bridget | hurricane | selena | salsa | dance | iron man | magic);
+
+/*
+ * Jarvis
+ */
+<ai> = jarvis;
+<actions> = (sleep | play | stop | news);
+<callActions> = (call | calling);
+<newsActions> = ( news | reading news );
+<ActionsPlay> = ( playing | play );
+<ActionsDateTime> = ( time | date);
+
+<articles> = ( a | the );
+<smootheners> = ( do | would you mind | please | give me | would you be so kind and );
+<dirrectsmootheners> = ( tell me | would you mind telling me );
+
+<descriptioners> = (in);
+public <newsopt> = ( technology | politics | music );
+
+
+
+/*
+ *Calling procedure
+ */
+
+public <operationsGen> = <ai> [ <smootheners>* ] <actions>;
+
+public <operationsPlay> = <ai> [ <smootheners>* ] <ActionsPlay>  <songs>;
+public <operationsNews> = <ai> [ <smootheners>* ] <newsActions>  <newsopt>;
+public <operationsCall> = <ai> [ <smootheners>* ] <callActions> <contacts>;
+public <operationsDateTime> = <ai> [ <dirrectsmootheners>* ] <ActionsDateTime>;
