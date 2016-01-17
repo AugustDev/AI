@@ -6,6 +6,7 @@
 #include <string>
 #include <Modules/ModulesHandler.h>
 #include <Database.h>
+#include <Watson.h>
 
 class VLC_Module : public ModulesHandler {
 
