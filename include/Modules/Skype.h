@@ -1,10 +1,10 @@
-#ifndef __VLCMODULE__
-#define __VLCMODULE__
+#ifndef __SKYPEMODULE__
+#define __SKYPEMODULE__
 
 #include <iostream> //
 #include <vector>
 #include <string>
-#include "Modules/ModulesHandler.h"
+#include <Modules/ModulesHandler.h>
 #include <Database.h>
 
 class Skype_Module : public ModulesHandler {
@@ -22,7 +22,7 @@ public:
 
     virtual void Stop();
 
-    VLC_Module() : ModulesHandler("call") {
+    Skype_Module() : ModulesHandler(std::vector<std::string>{"call", "calling"}) {
         std::cout << "[ModulesHandler] Skype Module initialized" << std::endl;
         ActiveModules.push_back(this);
     }

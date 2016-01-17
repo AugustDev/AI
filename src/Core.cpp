@@ -3,6 +3,8 @@
 #include <Interpreter.h>
 
 #include <Modules/vlc.h>
+#include <Modules/Skype.h>
+
 #include <API.h>
 
 #ifdef WIN32
@@ -21,6 +23,8 @@ int main(int argc, char **argv)
 
 	/* Initializing Modules */
 	VLC_Module VLCModule;
+	Skype_Module SkypeModule;
+
 	Interpreter interpreter;
 
 	voce::init(conf.libs, true, true, conf.grammar, "digits");

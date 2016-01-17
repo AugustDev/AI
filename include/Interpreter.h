@@ -12,6 +12,7 @@
 #include <API.h>
 #include <Utilities.h>
 #include <Modules/vlc.h>
+#include <Modules/Skype.h>
 
 static std::string const AI = "jarvis";
 

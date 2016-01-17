@@ -40,6 +40,11 @@ public:
     std::string getEntry(std::string Table, std::string Keyword);
 
     /*
+        Get a random entry from Table
+    */
+    std::string getRandomEntry(std::string Table);
+
+    /*
         Get Full Column of a specific Table.
         (Not sure about the format yet)
     */

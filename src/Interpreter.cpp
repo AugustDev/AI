@@ -1,13 +1,6 @@
 #include "Interpreter.h"
 #include "Utilities.h"
 
-std::map< std::string, std::string > Contacts =
-{
-    { "matas", "desperado557" },
-    { "mom", "raimundas35" },
-    { "martin", "martinloan" }
-};
-
    Interpreter Interpreter::setInput(std::vector<std::string> CallData)
    {
      this->CallData = CallData;
@@ -42,17 +35,17 @@ std::map< std::string, std::string > Contacts =
       * Call operation
       * Example: Jarvis call *contact*
       */
-     if(Keyword("call") || Keyword("calling")) {
-
-       int address_pos = (NextKeywordId("call") != -1) ? NextKeywordId("call") : NextKeywordId("calling");
-
-       /* Number is not provided, exiting*/
-       if (CallData.size() <= address_pos || address_pos == -1) {
-        return 0;
-       }
-
-       system((std::string("skype --callto ") + Contacts[CallData[address_pos]] + std::string("&")).c_str());
-    }
+    //  if(Keyword("call") || Keyword("calling")) {
+    //
+    //    int address_pos = (NextKeywordId("call") != -1) ? NextKeywordId("call") : NextKeywordId("calling");
+    //
+    //    /* Number is not provided, exiting*/
+    //    if (CallData.size() <= address_pos || address_pos == -1) {
+    //     return 0;
+    //    }
+    //
+    //    system((std::string("skype --callto ") + Contacts[CallData[address_pos]] + std::string("&")).c_str());
+    // }
 
    /*
     * YOUTUBE MODULE REBUILD
@@ -100,7 +93,7 @@ std::map< std::string, std::string > Contacts =
    * Stop song from playing
    * Example: Jarvis stop
    */
-  if (Keyword("stop")) {
+  if (API::KeywordExists(CallData, "stop")) {
       for(int i = 0; i < ActiveModules.size(); i++)  {
           ActiveModules[i]->Stop();
       }
@@ -110,7 +103,7 @@ std::map< std::string, std::string > Contacts =
    * Give newsfeed from PHP
    * Example: Jarvis news technology
    */
-  if(Keyword("news")) {
+  if(API::KeywordExists(CallData, "news")) {
 
      int address_pos = NextKeywordId("news");
      std::cout << "pos: " << address_pos  << ", Data size: "<< CallData.size() << std::endl;
@@ -136,13 +129,13 @@ std::map< std::string, std::string > Contacts =
      return 1;
   }
 
-  else if(Keyword("time")) {
+  else if(API::KeywordExists(CallData, "time")) {
      char* http_addr = "http://localhost/ai/datetime.php?opt=time";
      SynthesizeSpeech = "Now is " + HTTPGET(http_addr);
      return 1;
   }
 
-  else if(Keyword("date")) {
+  else if(API::KeywordExists(CallData, "date")) {
      char* http_addr = "http://localhost/ai/datetime.php?opt=date";
      SynthesizeSpeech = "Now is " + HTTPGET(http_addr);
 

@@ -6,6 +6,7 @@
 #include <string>
 #include <algorithm>
 #include <vector>
+#include <random>
 
 /*
     String functions and the their structure specific to the way
@@ -38,6 +39,11 @@ namespace API {
         Create new pipe and open a process.
     */
     extern FILE* NewProcess(std::string app, std::string input);
+
+    /*
+        Generates random number in range [min, max]
+    */
+    extern int RandomInt(int min, int max);
 
     /*
         Fancy /|\ print, requires figlet

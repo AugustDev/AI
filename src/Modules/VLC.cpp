@@ -9,20 +9,23 @@ void VLC_Module::Execute(std::vector<std::string> v)
 {
     /* Identifying song name */
     int ElementId = API::NextKeywordId(v, getActivationKeywords());
-
     if (ElementId == -1) return;
 
     std::string SongName = v[ElementId];
     std::cout << SongName << std::endl;
 
     /* Connecting to database SongsList */
-    Database SongsList = Database("localhost", "Jarvis", "root", "JarvisBase");
-    std::cout << SongsList.getEntry("SongsListPC", SongName) << std::endl;
+    Database db = Database("localhost", "Jarvis", "root", "JarvisBase");
+    std::string SongPath = db.getEntry("SongsListPC", SongName);
+    std::cout << SongName << std::endl;
 
-    if (SongsList.getEntry("SongsListPC", SongName) != "-1")
-        API::NewProcess("cvlc --play-and-exit", SongsList.getEntry("SongsListPC", SongName) + " vlc://quit");
+    if (!SongPath.empty())
+    {
+        API::NewProcess("cvlc --play-and-exit", SongPath + " vlc://quit");
+    }
 
-    setOutput("Excelent choice Sir.");
+    /* Generate speach output after excecution */
+    setOutput(db.getRandomEntry("Choices.Approvals"));
 }
 
 void VLC_Module::Stop() {
