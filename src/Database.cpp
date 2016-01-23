@@ -23,7 +23,9 @@ std::string Database::getEntry(std::string Table, std::string Keyword) {
             { "magic", "/home/amiras/Music/magic.mp3" },
     	    { "gyro", "/home/amiras/Music/gyroscope.mp3" },
     	    { "wildest", "/home/amiras/Music/wildestdreams.mp3" },
-    	    { "something", "/home/amiras/Music/wildestdreams.mp3" }
+    	    { "something", "/home/amiras/Music/wildestdreams.mp3" },
+            { "spectrum", "/home/amiras/Music/spectrum.mp3" },
+            { "whatever", "/home/amiras/Music/whatever.mp3" }
         };
 
         return Songs[Keyword];
@@ -52,8 +54,7 @@ std::string Database::getRandomEntry(std::string Table)
         {
             "Excelent choice sir.",
             "Fantastic choice.",
-            "I love the way you think sir.",
-            "Great beat sir."
+            "I love the way you think sir."
         };
 
         return List[API::RandomInt(0, List.size() - 1)];

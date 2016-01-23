@@ -17,15 +17,14 @@ void VLC_Module::Execute(std::vector<std::string> v)
     /* Connecting to database SongsList */
     Database db = Database("localhost", "Jarvis", "root", "JarvisBase");
     std::string SongPath = db.getEntry("SongsListPC", SongName);
-    std::cout << SongName << std::endl;
 
     if (!SongPath.empty())
     {
         API::NewProcess("cvlc --play-and-exit", SongPath + " vlc://quit");
-    }
 
-    /* Generate speach output after excecution */
-    setOutput(db.getRandomEntry("Choices.Approvals"));
+        /* Generate speech output after excecution */
+        setOutput(db.getRandomEntry("Choices.Approvals"));
+    }
 }
 
 void VLC_Module::Stop() {

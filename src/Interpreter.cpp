@@ -90,8 +90,7 @@
 
 
   /*
-   * Stop song from playing
-   * Example: Jarvis stop
+   * Stops all currently functioning modules
    */
   if (API::KeywordExists(CallData, "stop")) {
       for(int i = 0; i < ActiveModules.size(); i++)  {

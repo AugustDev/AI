@@ -15,7 +15,7 @@ public <stuff> = (car | dog) * ;
 */
 
 <contacts> = (matas | mom | martin);
-<songs> = ( something romantic | wildest dreams | gyro | gyroscope | young blood | sun | bridget | hurricane | selena | salsa | dance | iron man | magic);
+<songs> = ( something romantic | wildest dreams | gyro | gyroscope | young blood | sun | bridget | hurricane | selena | salsa | dance | iron man | magic | whatever | spectrum);
 
 /*
  * Jarvis

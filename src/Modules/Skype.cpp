@@ -7,7 +7,6 @@ void Skype_Module::Test()
 
 void Skype_Module::Execute(std::vector<std::string> w)
 {
-
     /* Identifying contact */
     int ElementId = API::NextKeywordId(w, getActivationKeywords());
     if (ElementId == -1) return;
