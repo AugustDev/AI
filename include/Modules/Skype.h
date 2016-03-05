@@ -1,11 +1,7 @@
 #ifndef __SKYPEMODULE__
 #define __SKYPEMODULE__
 
-#include <iostream> //
-#include <vector>
-#include <string>
-#include <Modules/ModulesHandler.h>
-#include <Database.h>
+#include <ModulesHandler.h>
 
 class Skype_Module : public ModulesHandler {
 

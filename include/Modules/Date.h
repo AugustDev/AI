@@ -1,11 +1,7 @@
 #ifndef __DATEM__
 #define __DATEM__
 
-#include <iostream>
-#include <vector>
-#include <string>
-#include <Modules/ModulesHandler.h>
-#include <Database.h>
+#include <ModulesHandler.h>
 #include <Utilities.h>
 
 class Date_Module : public ModulesHandler {

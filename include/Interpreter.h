@@ -30,16 +30,6 @@ private:
     */
    std::string SynthesizeSpeech;
 
-   /*
-        Checks if keyword is in the string (now rebuilt in API)
-    */
-   bool Keyword(std::string);
-
-   /*
-        Gives next keyword id in the CallData array (now rebuilt in API)
-    */
-   int NextKeywordId(std::string);
-
 public:
    Interpreter(std::vector<std::string> CallData) {
      this->CallData = CallData;

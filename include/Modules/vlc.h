@@ -1,11 +1,7 @@
 #ifndef __VLCMODULE__
 #define __VLCMODULE__
 
-#include <iostream> //
-#include <vector>
-#include <string>
-#include <Modules/ModulesHandler.h>
-#include <Database.h>
+#include <ModulesHandler.h>
 #include <Watson.h>
 
 class VLC_Module : public ModulesHandler {

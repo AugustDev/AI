@@ -1,11 +1,7 @@
 #ifndef __EMAILMODULE__
 #define __EMAILMODULE__
 
-#include <iostream> //
-#include <vector>
-#include <string>
-#include <Modules/ModulesHandler.h>
-#include <Database.h>
+#include <ModulesHandler.h>
 
 class Email_Module : public ModulesHandler {
 

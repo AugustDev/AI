@@ -8,6 +8,7 @@
 //#include <Modules/DateTime.h>
 #include <Modules/Time.h>
 #include <Modules/Date.h>
+#include <Modules/News.h>
 
 #include <API.h>
 
@@ -32,6 +33,7 @@ int main(int argc, char **argv)
 	//DateTime_Module DateTimeModule;
 	Time_Module TimeModule("time");
 	Date_Module DateModule("date");
+	News_Module NewsModule("news");
 
 	Interpreter interpreter;
 
@@ -52,6 +54,8 @@ int main(int argc, char **argv)
 		while (voce::getRecognizerQueueSize() > 0)
 		{
 			std::string s = voce::popRecognizedString();
+			
+			std::cout << "(Input) " << s << std::endl;
 
 			std::vector<std::string> data = split(s.c_str(), ' ');
 			interpreter.setInput(data);
@@ -61,9 +65,6 @@ int main(int argc, char **argv)
 				interpreter.CleanSpeech();
 			}
 
-
-			// std::cout << "newvar: " << interpreter.newVar << std::endl;
-
 			/* Check if the string contains 'quit'.
 			if (std::string::npos != s.rfind("quit"))
 			{
@@ -71,7 +72,6 @@ int main(int argc, char **argv)
 			}
 			*/
 
-			std::cout << "(Input) " << s << std::endl;
 			//voce::synthesize(s);
 		}
 	}

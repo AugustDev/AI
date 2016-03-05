@@ -1,4 +1,4 @@
-#include <Modules/ModulesHandler.h>
+#include <ModulesHandler.h>
 
 std::vector<ModulesHandler*> ActiveModules = {};
 

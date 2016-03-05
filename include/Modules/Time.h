@@ -1,11 +1,7 @@
 #ifndef __TIMEM__
 #define __TIMEM__
 
-#include <iostream>
-#include <vector>
-#include <string>
-#include <Modules/ModulesHandler.h>
-#include <Database.h>
+#include <ModulesHandler.h>
 #include <Utilities.h>
 
 class Time_Module : public ModulesHandler {
