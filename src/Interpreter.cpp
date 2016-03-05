@@ -31,22 +31,6 @@
        return 0;
      }
 
-     /*
-      * Call operation
-      * Example: Jarvis call *contact*
-      */
-    //  if(Keyword("call") || Keyword("calling")) {
-    //
-    //    int address_pos = (NextKeywordId("call") != -1) ? NextKeywordId("call") : NextKeywordId("calling");
-    //
-    //    /* Number is not provided, exiting*/
-    //    if (CallData.size() <= address_pos || address_pos == -1) {
-    //     return 0;
-    //    }
-    //
-    //    system((std::string("skype --callto ") + Contacts[CallData[address_pos]] + std::string("&")).c_str());
-    // }
-
    /*
     * YOUTUBE MODULE REBUILD
     * Play song operation
@@ -128,21 +112,6 @@
      return 1;
   }
 
-  else if(API::KeywordExists(CallData, "time")) {
-     char* http_addr = "http://localhost/ai/datetime.php?opt=time";
-     SynthesizeSpeech = "Now is " + HTTPGET(http_addr);
-     return 1;
-  }
-
-  else if(API::KeywordExists(CallData, "date")) {
-     char* http_addr = "http://localhost/ai/datetime.php?opt=date";
-     SynthesizeSpeech = "Now is " + HTTPGET(http_addr);
-
-     if (HTTPGET(http_addr) == "2015 September 25") {
-         SynthesizeSpeech += ". Happy birthday sir.";
-     }
-     return 1;
-  }
 
 
      //Request Speech Synthesis

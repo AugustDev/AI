@@ -4,6 +4,8 @@
 
 #include <Modules/vlc.h>
 #include <Modules/Skype.h>
+#include <Modules/EMail.h>
+#include <Modules/DateTime.h>
 
 #include <API.h>
 
@@ -24,6 +26,8 @@ int main(int argc, char **argv)
 	/* Initializing Modules */
 	VLC_Module VLCModule;
 	Skype_Module SkypeModule;
+	Email_Module EmailModule;
+	DateTime_Module DateTimeModule;
 
 	Interpreter interpreter;
 
@@ -63,7 +67,7 @@ int main(int argc, char **argv)
 			}
 			*/
 
-			std::cout << "You said: " << s << std::endl;
+			std::cout << "(Input) " << s << std::endl;
 			//voce::synthesize(s);
 		}
 	}

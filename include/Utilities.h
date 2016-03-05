@@ -26,6 +26,6 @@ size_t writefunc(void *ptr, size_t size, size_t nmemb, struct string *s);
 /*
  * Obtain website source code
  */
-std::string HTTPGET(char* http_addr);
+std::string HTTPGET(std::string http_addr);
 
 #endif

@@ -39,7 +39,7 @@ static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *use
   return size * nmemb;
 }
 
-std::string HTTPGET(char* http_addr)
+std::string HTTPGET(std::string http_addr)
 {
   CURL *curl;
   CURLcode res;
@@ -47,7 +47,7 @@ std::string HTTPGET(char* http_addr)
 
   curl = curl_easy_init();
   if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, http_addr);
+    curl_easy_setopt(curl, CURLOPT_URL, http_addr.c_str());
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
     res = curl_easy_perform(curl);

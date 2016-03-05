@@ -162,7 +162,7 @@ const std::string pathSeparator = ":";
 			options[0].extraInfo = NULL;
 
 			// Add an option to increase the max heap size.
-			options[1].optionString = "-Xmx256m";
+			options[1].optionString = "-Xmx512m";
 			options[1].extraInfo = NULL;
 			//options[1].optionString = "-Djava.compiler=NONE"; // Disable JIT.
 			//options[1].optionString = "-verbose:gc,class,jni";

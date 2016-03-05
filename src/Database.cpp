@@ -43,6 +43,18 @@ std::string Database::getEntry(std::string Table, std::string Keyword) {
         return Contacts[Keyword];
     }
 
+    if (Table == std::string("ContactListEmail"))
+    {
+        std::map< std::string, std::string > Contacts =
+        {
+            { "me", "augustinasmal@gmail.com" },
+            { "vytautas", "vytautui.m@gmail.com" },
+            { "raimond", "malinauskas1@gmail.com"}
+        };
+
+        return Contacts[Keyword];
+    }
+
   return "";
 }
 
