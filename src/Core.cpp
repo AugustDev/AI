@@ -5,7 +5,9 @@
 #include <Modules/vlc.h>
 #include <Modules/Skype.h>
 #include <Modules/EMail.h>
-#include <Modules/DateTime.h>
+//#include <Modules/DateTime.h>
+#include <Modules/Time.h>
+#include <Modules/Date.h>
 
 #include <API.h>
 
@@ -27,7 +29,9 @@ int main(int argc, char **argv)
 	VLC_Module VLCModule;
 	Skype_Module SkypeModule;
 	Email_Module EmailModule;
-	DateTime_Module DateTimeModule;
+	//DateTime_Module DateTimeModule;
+	Time_Module TimeModule("time");
+	Date_Module DateModule("date");
 
 	Interpreter interpreter;
 

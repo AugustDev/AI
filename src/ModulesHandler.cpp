@@ -10,6 +10,10 @@ ModulesHandler::ModulesHandler(std::vector<std::string> ActivationKeywordVector)
     ActivationKeywords = ActivationKeywordVector;
 }
 
+ModulesHandler::ModulesHandler(std::string ActivationKeyword) {
+    ActivationKeywords = {ActivationKeyword};
+}
+
 bool ModulesHandler::OutputRequest() {
     if (OutputString.length() > 0)
         return true;

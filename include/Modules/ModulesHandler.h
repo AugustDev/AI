@@ -61,7 +61,12 @@ public:
     */
     std::vector<std::string> getActivationKeywords();
 
+    /*
+        Constructors with input ActivationKeyword (vector)
+    */
     ModulesHandler(std::vector<std::string> ActivationKeywordVector);
+    
+    ModulesHandler(std::string ActivationKeyword);
 };
 
 #endif
