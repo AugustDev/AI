@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <Database.h>
 
 class ModulesHandler;
 
@@ -14,7 +15,6 @@ extern std::vector<ModulesHandler*> ActiveModules;
 
 class ModulesHandler {
 private:
-
     /*
         Keyword in a sentencd required to activate this module
     */
@@ -24,6 +24,12 @@ private:
         String for speaker-output
     */
     std::string OutputString;
+
+protected:
+    /*
+        Databse connection for all derived classes to use
+    */
+    Database db = Database("localhost", "Jarvis", "root", "JarvisBase");
 
 public:
     /*
@@ -65,7 +71,7 @@ public:
         Constructors with input ActivationKeyword (vector)
     */
     ModulesHandler(std::vector<std::string> ActivationKeywordVector);
-    
+
     ModulesHandler(std::string ActivationKeyword);
 };
 

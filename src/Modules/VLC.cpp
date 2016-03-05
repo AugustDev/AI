@@ -15,7 +15,6 @@ void VLC_Module::Execute(std::vector<std::string> v)
     std::cout << SongName << std::endl;
 
     /* Connecting to database SongsList */
-    Database db = Database("localhost", "Jarvis", "root", "JarvisBase");
     std::string SongPath = db.getEntry("SongsListPC", SongName);
 
     if (!SongPath.empty())

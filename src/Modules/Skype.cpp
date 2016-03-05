@@ -14,7 +14,6 @@ void Skype_Module::Execute(std::vector<std::string> w)
     std::string ContactName = w[ElementId];
 
     /* Connecting to database Skype Contact List */
-    Database db = Database("localhost", "Jarvis", "root", "JarvisBase");
     std::string ContactNumber = db.getEntry("ContactListSkype", ContactName);
 
     /* If associated contact exists call */

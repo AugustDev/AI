@@ -21,7 +21,6 @@ void Email_Module::Execute(std::vector<std::string> w)
     }
 
     /* Connecting to database Email Contact List */
-    Database db = Database("localhost", "Jarvis", "root", "JarvisBase");
     std::string ContactEmail = db.getEntry("ContactListEmail", ContactName);
 
     /* If associated contact exists compose message */
