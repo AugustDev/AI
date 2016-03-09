@@ -11,7 +11,7 @@ void Time_Module::Execute(std::vector<std::string> w)
 
     if (API::KeywordExists(w, "time"))
     {
-        std::string http_addr = "http://localhost/ai/datetime.php?opt=time";
+        std::string http_addr = db.getEntry("Links", "time");
         std::string Time = HTTPGET(http_addr);
         setOutput("Now is " + Time);
     }

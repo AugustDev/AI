@@ -55,6 +55,18 @@ std::string Database::getEntry(std::string Table, std::string Keyword) {
         return Contacts[Keyword];
     }
 
+    if (Table == std::string("Links"))
+    {
+        std::map< std::string, std::string > Contacts =
+        {
+            { "time", "http://localhost/ai/datetime.php?opt=time" },
+            { "date", "http://localhost/ai/datetime.php?opt=date" },
+            { "news", "http://localhost/ai/getnews.php?t="}
+        };
+
+        return Contacts[Keyword];
+    }
+
   return "";
 }
 
