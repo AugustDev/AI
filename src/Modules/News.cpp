@@ -12,6 +12,8 @@ void News_Module::Execute(std::vector<std::string> w)
     if(API::KeywordExists(w, "news"))
     {
         int ElementId = API::NextKeywordId(w, "news");
+        if (ElementId == -1) return;
+        
         std::string Topic = w[ElementId];
 
         std::string http_addr = db.getEntry("Links", "news") + Topic;

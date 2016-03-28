@@ -17,24 +17,6 @@
        return 0;
      }
 
-   /*
-    * YOUTUBE MODULE REBUILD
-    * Play song operation
-    * Example: Jarvis play *song*
-
-   if(Keyword("play")) {
-
-     int address_pos = NextKeywordId("play");
-
-     // Number is not provided, exiting
-     if (CallData.size() <= address_pos || address_pos == -1) {
-      return 0;
-     }
-
-     FILE *lsofFile_p = popen((std::string("firefox ") + Songs[CallData[address_pos]] + std::string(" &")).c_str(), "r");
-  }
-  */
-
   /*
    * Handling modules system
    * Example: jarvis play
