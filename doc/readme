@@ -1,0 +1,5 @@
+So far:
+
+apt-get install figlet libvlccore-dev libvlc-dev
+
+http://stackoverflow.com/questions/10116783/a-simple-c-program-to-play-mp3-using-libvlc
