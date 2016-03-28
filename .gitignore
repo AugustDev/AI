@@ -1,1 +1,3 @@
 /application/AI
+/obj
+*.o

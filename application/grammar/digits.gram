@@ -14,8 +14,8 @@ public <numbers> = (oh | zero | one | two | three | four | five | six | seven | 
 public <stuff> = (car | dog) * ;
 */
 
-<contacts> = (matas | mom | martin);
-<songs> = ( something romantic | wildest dreams | gyro | gyroscope | young blood | sun | bridget | hurricane | selena | salsa | dance | iron man | magic | whatever | spectrum);
+<contacts> = (matas | mom | martin | raimond | dad | me);
+<songs> = ( something romantic | wildest dreams | gyro | gyroscope | young blood | sun | bridget | hurricane | selena | salsa | dance | iron man | magic |whatever | spectrum);
 
 /*
  * Jarvis
@@ -26,6 +26,8 @@ public <stuff> = (car | dog) * ;
 <newsActions> = ( news | reading news );
 <ActionsPlay> = ( playing | play );
 <ActionsDateTime> = ( time | date);
+<ActionsEmail> = ( email | mail | message );
+<ContactToActionIndicators> = ( check );
 
 <articles> = ( a | the );
 <smootheners> = ( do | would you mind | please | give me | would you be so kind and );
@@ -46,3 +48,4 @@ public <operationsPlay> = <ai> [ <smootheners>* ] <ActionsPlay>  <songs>;
 public <operationsNews> = <ai> [ <smootheners>* ] <newsActions>  <newsopt>;
 public <operationsCall> = <ai> [ <smootheners>* ] <callActions> <contacts>;
 public <operationsDateTime> = <ai> [ <dirrectsmootheners>* ] <ActionsDateTime>;
+public <operationsEmail> = <ai> [ <smootheners>* ] <ActionsEmail> (<contacts> | <ContactToActionIndicators>);
