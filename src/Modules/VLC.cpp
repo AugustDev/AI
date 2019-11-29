@@ -15,14 +15,21 @@ void VLC_Module::Execute(std::vector<std::string> v)
     std::cout << SongName << std::endl;
 
     /* Connecting to database SongsList */
-    std::string SongPath = db.getEntry("SongsListPC", SongName);
+    std::string SongPath = db.getEntry("playlist", "path", SongName);
 
     if (!SongPath.empty())
     {
-        API::NewProcess("cvlc --play-and-exit", SongPath + " vlc://quit");
+        //Deprecated method, now using VLC API instead
+        //API::NewProcess("cvlc --play-and-exit", SongPath + " vlc://quit");
 
+        std::thread MusicThread (VLC_Module::StaticPlay, SongPath, 600);
+
+        //! Problem: this is returned only after MusicThread finishes execution
         /* Generate speech output after excecution */
         setOutput(db.getRandomEntry("Choices.Approvals"));
+
+        //Joining thread
+        MusicThread.join();
     }
 }
 

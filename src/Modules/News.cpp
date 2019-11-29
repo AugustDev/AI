@@ -13,10 +13,10 @@ void News_Module::Execute(std::vector<std::string> w)
     {
         int ElementId = API::NextKeywordId(w, "news");
         if (ElementId == -1) return;
-        
+
         std::string Topic = w[ElementId];
 
-        std::string http_addr = db.getEntry("Links", "news") + Topic;
+        std::string http_addr = db.getEntry("links", "url", "news") + Topic;
         std::string FetchedData = "Today in " + Topic  + ". " + HTTPGET(http_addr);
 
         std::cout << FetchedData << std::endl;

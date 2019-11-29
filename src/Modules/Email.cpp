@@ -21,7 +21,7 @@ void Email_Module::Execute(std::vector<std::string> w)
     }
 
     /* Connecting to database Email Contact List */
-    std::string ContactEmail = db.getEntry("ContactListEmail", ContactName);
+    std::string ContactEmail = db.getEntry("ContactListEmail", "url", ContactName);
 
     /* If associated contact exists compose message */
     if (!ContactEmail.empty())

@@ -11,7 +11,7 @@ void Date_Module::Execute(std::vector<std::string> w)
 
     if (API::KeywordExists(w, "date"))
     {
-        std::string http_addr = db.getEntry("Links", "date");
+        std::string http_addr = db.getEntry("links", "url", "date");
         std::string TodayDate = HTTPGET(http_addr);
 
         if (TodayDate == "2015 September 25")
