@@ -11,9 +11,11 @@
 namespace Watson {
 
     /*
-        Experimenting with IBM Watson capabilities 
+        Experimenting with IBM Watson capabilities
     */
     extern void Text2Speech(std::string);
+
+    extern void SequencialPlay(std::string);
 
 }
 

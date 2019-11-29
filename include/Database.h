@@ -5,6 +5,7 @@
 #include <vector>
 #include <map> //temp
 #include <API.h>
+#include <Utilities.h>
 
 /*
     This class would manage sets of data, such as music libraries, files,
@@ -37,12 +38,13 @@ public:
         Get entry with associated keyword
         Map: Keyword -> entry
     */
-    std::string getEntry(std::string Table, std::string Keyword);
+    std::string getEntry(std::string Table, std::string Column, std::string Keyword);
 
     /*
         Get a random entry from Table
     */
     std::string getRandomEntry(std::string Table);
+    std::string getRandomEntry(std::string Table, std::string Column);
 
     /*
         Get Full Column of a specific Table.
@@ -55,6 +57,8 @@ public:
         (Not sure about the format yet)
     */
     std::string getTable(std::string TableName);
+
+    std::string NewQuery(std::string query);
 
 };
 

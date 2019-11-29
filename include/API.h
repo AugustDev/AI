@@ -38,7 +38,7 @@ namespace API {
     /*
         Create new pipe and open a process.
     */
-    extern FILE* NewProcess(std::string app, std::string input);
+    extern FILE* NewProcess(std::string app, std::string input = "");
 
     /*
         Generates random number in range [min, max]
